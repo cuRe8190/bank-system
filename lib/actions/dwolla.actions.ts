@@ -64,18 +64,21 @@ export const createDwollaCustomer = async (
 };
 
 export const createTransfer = async ({
-  sourcefundingSourceUrl,
-  destinationfundingSourceUrl,
+  sourceFundingSourceUrl,
+  destinationFundingSourceUrl,
   amount,
 }: TransferParams) => {
+  console.log(sourceFundingSourceUrl,
+    destinationFundingSourceUrl,
+    amount,);
   try {
     const requestBody = {
       _links: {
         source: {
-          href: sourcefundingSourceUrl,
+          href: sourceFundingSourceUrl,
         },
         destination: {
-          href: destinationfundingSourceUrl,
+          href: destinationFundingSourceUrl,
         },
       },
       amount: {
@@ -87,7 +90,7 @@ export const createTransfer = async ({
       .post("transfers", requestBody)
       .then((res) => res.headers.get("location"));
   } catch (err) {
-    console.error("Transfer fund failed: ", err);
+    console.error("Transfer fund failed: ct", err);
   }
 };
 
@@ -109,6 +112,6 @@ export const addFundingSource = async ({
     };
     return await createFundingSource(fundingSourceOptions);
   } catch (err) {
-    console.error("Transfer fund failed: ", err);
+    console.error("Transfer fund failed: ad", err);
   }
 };

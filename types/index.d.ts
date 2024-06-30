@@ -113,8 +113,8 @@ declare type Receiver = {
 };
 
 declare type TransferParams = {
-  sourcefundingSourceUrl: string;
-  destinationfundingSourceUrl: string;
+  sourceFundingSourceUrl: string;
+  destinationFundingSourceUrl: string;
   amount: string;
 };
 

@@ -68,19 +68,22 @@ const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
             width={24}
             height={24}
           />
-          <p className="hiddenl text-[16px] font-semibold text-black-2 xl:block">
+          <p className="hidden text-[16px] font-semibold text-black-2 xl:block">
             Connect bank
           </p>
         </Button>
       ) : (
         <Button onClick={() => open()} className="plaidlink-default">
-          <Image
-            src="/icons/connect-bank.svg"
-            alt="connect bank"
-            width={24}
-            height={24}
-          />
-          <p className="text-[16px] font-semibold text-black-2">Connect bank</p>
+          <div className="size-6">
+            <Image
+              src="/icons/connect-bank.svg"
+              alt="connect bank"
+              width={24}
+              height={24}
+              className="size-[24px] max-xl:size-14"
+            />
+          </div>
+          <p className="sidebar-label">Connect bank</p>
         </Button>
       )}
     </>
